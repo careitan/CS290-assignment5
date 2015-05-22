@@ -1,0 +1,64 @@
+﻿h1 {
+    vertical-align:middle;
+}
+
+h2 {
+    vertical-align:middle;
+}
+
+p {
+    padding-left:20px;
+    font:normal 18px;
+    font-family:'Arial Rounded MT',sans-serif;
+}
+
+ol {
+    margin-left:15px;
+    font:normal 18px;
+    font-family:'Arial Rounded MT',sans-serif;
+}
+
+ul {
+    margin-left:15px;
+    font:normal 18px;
+    font-family:'Arial Rounded MT',sans-serif;
+}
+
+li.one {
+    font:normal 18px;
+    font-family:'Arial Rounded MT',sans-serif;
+}
+
+li.two {
+    margin-left:30px;
+    font:normal 18px;
+    font-family:'Arial Rounded MT',sans-serif;
+}
+
+div.Title {
+    background:yellow;
+    height:50px;
+    margin-bottom:25px;
+    padding-left:25px;
+    vertical-align:middle;
+}
+
+div.Section {
+    background:yellow;
+    height:40px;
+    margin-bottom:15px;
+    padding-left:25px;
+    vertical-align:middle;
+}
+
+img {
+    margin-left:30px;
+    margin-top:10px;
+    margin-bottom:10px;
+}
+
+img.GKHSExcel {
+    margin-left:30px;
+    margin-top:20px;
+    margin-bottom:20px;
+}

@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>CS 494 Assignment 7 - How to Guide</title>
+  <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+  <div class="Title">
+    <h1>How to Guide using <a href="http://www.highcharts.com" target="_blank">Highchart</a> JavaScript charting</h1>
+    <br>
+  </div>
+  <p>
+    <em>By: Allan Reitan</em> (@AallnR)<br><br>
+    Highcharts is a company that provides libraries which allow web developers to make three basic types of graphical inserts to their web pages.
+  </p>
+  <p>
+    They are:<br>
+    <ol>
+      <li>Highcharts – basic graphical rendering component in JavaScript.
+      <li>Highstock – stock graphs using JavaScript.
+      <li>Highmaps (new) – graph data using geography plotting.
+    </ol>
+  <p>
+    NOTICE: These are demonstration files only. If you use these in regular projects please acquire the licensed version from <a href="http://shop.highsoft.com/" target="_blank">Highcharts.</a>
+  </p>
+  <br>
+  <div class="Section">
+    <h2>Getting the source files for the library</h2>
+  </div>
+  <p>
+    There are a couple of different methods to get the libraries for Highcharts products.<br>
+    <ul>
+      <li class="one">Download ZIP directly from <a href="http://www.highcharts.com/download" target="_blank">http://www.highcharts.com/download</a></li>
+      <li class="one">Use the Download builder found on the download page to create a tailored set of JavaScript libraries.</li>
+      <li class="two">This gives you the ability to reduce the overall size of the files in your library, if you are only planning on using a limited set of the functions and capabilities.</li>
+      <li class="one">Highcharts file service: <a href="http://code.highcharts.com/" target="_blank">http://code.highcharts.com/</a></li>
+      <li class="two">This allows you to go pick which components that you want to use and copy and paste them into your own project.</li>
+      <li class="two">
+        This is a more advanced way to work with these libraries,
+        the company maintains an <a href="http://api.highcharts.com/highcharts" target="_blank">API reference</a>
+      </li>
+    </ul>
+  </p>
+  <div class="Section">
+    <h2>Preparing to use the library</h2>
+  </div>
+  <p>
+    These examples are based on <em>Highcharts version 4.0.4.</em><br>
+    Prerequisites for Highcharts are <em>jQuery version 1.8.2.</em><br>
+    <br>If you are not using jQuery in your project then you can easily address this matter by putting the following script reference in your web page header:<br>
+    <ul>
+      <li class="two">&lt;script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"&gt;&lt;/script&gt;</li>
+    </ul>
+  <p>
+    Copy all of the JavaScript Libraries into a web share that you will be working from.
+  </p>
+  <p>
+    For this example, I will demonstrate recreating this sample chart originally created with Microsoft Excel.<br>
+    <img class="GKHSExcel" src="GKHS_Excel.png" height="500" width="700">
+  </p>
+  <p>
+    Since I am using the free version of the library I have experienced some issues whereby the property settings for plot background color were not adjustable.  Not able to determine if this is a function of the free version versus the licensed copy.
+  </p>
+  <div class="Section">
+    <h2>Constructing the Chart in HTML and JavaScript</h2>
+  </div>
+  <p>
+    Reference finished <a href="http://web.engr.oregonstate.edu/~reitanc/CS494/assign7/Sample/index.htm" target="_blank">sample link</a><br><br>
+    Looking through the <a href="http://api.highcharts.com/highcharts" target="_blank">API reference</a> I found the following key settings that were going to be used.<br>
+    <ul>
+      <li class="one"><a href="http://api.highcharts.com/highcharts#chart" target="_blank">chart</a>: the basic object that gets created.  It can also be added to a collection of charts on the entire page.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#title" target="_blank">title</a>: the master banner header, default location across the top of the chart.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#subtitle" target="_blank">subtitle</a>: a smaller header for the chart which can be moved and positioned anywhere.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#colors" target="_blank">colors</a>: an array of colors that are used for lines that are plotted.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#xAxis" target="_blank">xAxis</a>: controls the text and display elements along the bottom horizontal of the chart.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#yAxis" target="_blank">yAxis</a>: controls the text and display elements along the vertical left edge of the chart.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#tooltip" target="_blank">tooltip</a>: controls the textbox that appears when you mouse over a point on the chart.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#legend" target="_blank">legend</a>: controls the position and format of the legend box.
+      <li class="one"><a href="http://api.highcharts.com/highcharts#series" target="_blank">series</a>: the arrays that store the data to be rendered and displayed.
+    </ul>
+  </p>
+  <p>
+    The basic buildup of a chart object can be done without a dataset to attach to it.<br>
+    Copy from a sample file <a href="Empty_Line_Chart.txt" target="_blank">here.</a><br><br>
+    The JavaScript function works as an embedded script or can be encapsulated in a seperate JavaScript library of your own creation.<br>
+    It will just show the title &amp; subtitle fields (if they are populated). but will not show the axis, plot area, or legend.
+    <br><br>
+    Here is a sample of the empty chart:<br>
+    <img src="Empty_Chart.png"><br>
+    Now we have a few options with populating the data on the chart:<br>
+    <ul>
+      <li class="one">Static Series (least difficult to code).</li>
+      <li class="one">Dynamic Series which supports JSON Objects to define a dataset.</li>
+    </ul><br>
+  </p>
+  <h3>Static Series Method</h3>
+  <p>
+    You can easily append the Data Series to your blank chart when you create the object.  Here is an example of the array that was manually added to create the GKHS sample:<br>
+    <img src="Static_Series.png">
+  </p>
+  <h3>Dynamic Series Method</h3>
+  <p>
+    Replace the above code sample with JSON Objects defined either as individual arrays, or any other generated JSON method.<br>
+    Alternate way (method invoke): chart.addSeries(<em>JSONObject Array</em>).
+  </p>
+  <div class="Section">
+    <h2>Having some fun with formatting</h2>
+  </div>
+  <p>
+  Changing the color of the graphline for negative value numbers can be easily accomplished by setting the <em>negativeColor</em> property of the series.<br>
+  <br>
+  In this example, let's change the negative color of the Net Income bar to Orange.<br><br>
+  {<br>
+    name: 'Net Income',<br>
+    data: [11071, 6647, -10424, -13022, -2757, 3377, -19596, -15374,  26871, 42963],<br>
+    <em>negativeColor: '#fe8001'</em><br>
+  }<br><br>
+  Here is the original graph:<br>
+  <img src="Graph_Normal_Line.png"><br><br>
+  After applying the change in the <em>negativeColor</em> the results are:<br>
+  <img src="Graph_Negative_Line.png"><br>
+  </p>
+  <div class="Section">
+    <h2>Other Use Cases for this library</h2>
+  </div>
+  <p>
+    The Highcharts library can be combined to make dashboards by combining the line chart with any of the other types of charting tools available.<br>
+    More advanced applications of this library can include the 3-D image style graphs to make something more Sales &amp; Marketing quality style in your web presentation.<br>
+    Due to the modularity of this library, you can also use PHP or another server to serve up pre-populated JSON Objects to fill out a web page.  This would allow you to create real time updating charts and graphs by having the server refresh the dataset that is being drawn on your basic web page.<br>
+    <br>Hope you have found this quick how-to-guide beneficial.
+  </p>
+
+
+
+</body>
